@@ -5,7 +5,7 @@ these make the slideshow work
 
 #slides {
   position: relative;
-  height: 300px;
+  height: 400px;
   padding: 0px;
   margin: 0px;
   list-style-type: none;
@@ -19,6 +19,12 @@ these make the slideshow work
   height: 100%;
   opacity: 0;
   z-index: 1;
+
+  font-size: 40px;
+  //padding: 40px;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
 
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
@@ -35,12 +41,14 @@ these make the slideshow work
   just for appearance; change whatever you want
   */
 
-.slide {
-  font-size: 40px;
-  padding: 40px;
-  box-sizing: border-box;
-  background: #333;
-  color: #fff;
+#slide-controls {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+
+  span {
+    margin: 0 10px;
+  }
 }
 
 .slide:nth-of-type(1) {
