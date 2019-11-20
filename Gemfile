@@ -17,7 +17,9 @@ gem 'webpacker', '~> 4.0'
 
 gem 'devise'
 
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', '~> 1.56'
+
+gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
