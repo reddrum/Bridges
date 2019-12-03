@@ -17,6 +17,7 @@
 }
 
 #conversation {
+  display: none;
   width: 96%;
   height: 96%;
   position: absolute;
@@ -38,7 +39,7 @@
     margin-top: 30px;
   }
 
-  .close-conversation {
+  #close-conversation {
     cursor: pointer;
 
     &:hover {

@@ -4,10 +4,14 @@ $(function() {
     $(".match-tile").on("click", function () {
         var account_id  = $(this).data("id");
 
-        $("#conversation").show();
+        $.ajax({
+            url: "/get/conversation/"+account_id,
+            method: "post",
+            dataType: "script"
+        })
     });
 
-    $(".close-conversation").on("click", function () {
+    $("#close-conversation").on("click", function () {
         $("#conversation").hide();
     });
 
