@@ -14,13 +14,16 @@
 </div>
 <div class="row">
   <div class="col-12 mt-5 bottom-bar">
-    <form>
+    <%= form_with model: @conversation do |form| %>
       <div class="input-group">
-        <input type="text" name="message" value="" placeholder="Enter your message" class="form-control form-control-lg">
+        <%= form.fields_for :messages, @message do |message_form| %>
+          <%= message_form.text_field :body, placeholder: "Enter your message", class: "form-control form-control-lg" %>
+        <% end %>
+
         <div class="input-group-append">
           <input type="submit" name="submit" value="Send" class="btn btn-success btn-lg pl-5 pr-5">
         </div>
       </div>
-    </form>
+    <% end %>
   </div>
 </div>
