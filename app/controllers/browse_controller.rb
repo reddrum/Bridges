@@ -36,6 +36,7 @@ class BrowseController < ApplicationController
 
     conversation = Conversation.between(id, current_account.id)
     @conversation = conversation.size > 0 ? conversation.first : Conversation.new
+    @messages = @conversation.messages.includes(account: :images_attachments) if @conversation.persisted?
     @message = @conversation.messages.build
 
     if @profile.present?
