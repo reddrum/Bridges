@@ -1,9 +1,9 @@
 class BrowseController < ApplicationController
   def browse
-    liked_account_ids = Like.where(account_id: current_account.id).map(&:liked_account_id)
+    liked_account_ids = Like.where(account_id: current_account.id).pluck(:liked_account_id)
     liked_account_ids << current_account.id
 
-    @users = Account.where.not(id: liked_account_ids)
+    @users = Account.includes(:images_attachments).where.not(id: liked_account_ids).limit(2)
     @matches = current_account.matches
   end
 

@@ -47,6 +47,12 @@
     }
   }
 
+  .sent-by-me {
+    .conversation-message {
+      background: #92b2d6;
+    }
+  }
+
   #close-conversation {
     cursor: pointer;
 
