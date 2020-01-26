@@ -1,10 +1,12 @@
 class BrowseController < ApplicationController
   def browse
-    liked_account_ids = Like.where(account_id: current_account.id).pluck(:liked_account_id)
-    liked_account_ids << current_account.id
+    @matches = Match.matches_for( current_account.id )
+    @users = Match.recommended_matches_for( current_account.id )
+  end
 
-    @users = Account.includes(:images_attachments).where.not(id: liked_account_ids).limit(2)
-    @matches = current_account.matches
+  def get_more_users
+    # return next 10 users via ajax
+
   end
 
   def approve
